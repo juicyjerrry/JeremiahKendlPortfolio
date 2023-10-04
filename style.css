@@ -1,4 +1,14 @@
-/* Add your CSS styles here */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+main {
+  width: 650px;
+  margin: auto;
+  margin-top: 15vh;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20vh;
+  line-height: 1.2em;
+  
+}
+
 body {
   text-align: left;
   font-family: Arial, sans-serif;
@@ -7,33 +17,29 @@ body {
 }
 
 .outline {
-  width: 17vw;
+  width: 15vw;
   /* Adjust the width and height as needed */
-  height: 7vh;
+  height: 8vh;
   /* to make it circular */
   border: .5vw solid #000;
   /* 10px buffer */
-  border-radius: 50%;
+  border-radius: 20%;
   /* Makes it a circle */
   display: flex;
   align-items: center;
   justify-content: center;
-
+  transition: 0.4s;
 }
 
-.hidden1 {
-  display: none;
-  margin: 0px 0px 0px 8vw;
+.outline:hover{
+  background-color: #ccc
 }
 
-.hidden2 {
-  display: none;
+.hidden {
   margin: 0px 0px 0px 8vw;
-}
-
-.hidden3 {
-  display: none;
-  margin: 0px 0px 0px 8vw;
+  max-height: 0vh;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 h2 {
