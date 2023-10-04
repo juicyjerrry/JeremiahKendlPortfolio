@@ -1,4 +1,4 @@
-document.getElementById('now').addEventListener('click', function() {
+/* document.getElementById('now').addEventListener('click', function() {
   var paragraphs = document.getElementsByClassName('hidden1');
 
   for (var i = 0; i < paragraphs.length; i++) {
@@ -33,5 +33,17 @@ document.getElementById('contact').addEventListener('click', function() {
     }
   }
 });
-
+ */
+var panels = document.getElementsByClassName("outline");
+var i;
+for (i = 0; i < panels.length; i++) {
+  panels[i].addEventListener("click", function(){      
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+}
 
