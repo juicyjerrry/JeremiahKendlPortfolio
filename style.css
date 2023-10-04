@@ -1,37 +1,54 @@
 /* Add your CSS styles here */
 body {
-    text-align: left;
-    font-family: Arial, sans-serif;
-    margin: 10vh 0px 0px 10vw;
-    padding: 0;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  margin: 10vh 0px 0px 10vw;
+  padding: 0;
 }
 
 .outline {
-  display: inline;
-  border: 1px solid #999;
-  border-collapse: separate;
-  border-spacing: 50px;
+  width: 17vw;
+  /* Adjust the width and height as needed */
+  height: 7vh;
+  /* to make it circular */
+  border: .5vw solid #000;
+  /* 10px buffer */
+  border-radius: 50%;
+  /* Makes it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
-.button:click{
-  
+.hidden1 {
+  display: none;
+  margin: 0px 0px 0px 8vw;
 }
 
-header {
+.hidden2 {
+  display: none;
+  margin: 0px 0px 0px 8vw;
 }
 
-nav ul {
+.hidden3 {
+  display: none;
+  margin: 0px 0px 0px 8vw;
 }
 
-nav ul li {
+h2 {
+  margin: 5vh;
+  padding: 2vh;
 }
 
-nav ul li a {
-}
+header {}
 
-section {
-}
+nav ul {}
 
-footer {
-}
+nav ul li {}
+
+nav ul li a {}
+
+section {}
+
+footer {}
