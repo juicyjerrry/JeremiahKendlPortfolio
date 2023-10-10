@@ -1,40 +1,5 @@
-/* document.getElementById('now').addEventListener('click', function() {
-  var paragraphs = document.getElementsByClassName('hidden1');
-
-  for (var i = 0; i < paragraphs.length; i++) {
-    if (paragraphs[i].style.display === 'none' || paragraphs[i].style.display === '') {
-      paragraphs[i].style.display = 'block';
-    } else {
-      paragraphs[i].style.display = 'none';
-    }
-  }
-});
-
-document.getElementById('works').addEventListener('click', function() {
-  var paragraphs = document.getElementsByClassName('hidden2');
-
-  for (var i = 0; i < paragraphs.length; i++) {
-    if (paragraphs[i].style.display === 'none' || paragraphs[i].style.display === '') {
-      paragraphs[i].style.display = 'block';
-    } else {
-      paragraphs[i].style.display = 'none';
-    }
-  }
-});
-
-document.getElementById('contact').addEventListener('click', function() {
-  var paragraphs = document.getElementsByClassName('hidden3');
-
-  for (var i = 0; i < paragraphs.length; i++) {
-    if (paragraphs[i].style.display === 'none' || paragraphs[i].style.display === '') {
-      paragraphs[i].style.display = 'block';
-    } else {
-      paragraphs[i].style.display = 'none';
-    }
-  }
-});
- */
-var panels = document.getElementsByClassName("outline");
+/* Slide Out Recipe Card */
+var panels = document.getElementsByClassName("flex");
 var i;
 for (i = 0; i < panels.length; i++) {
   panels[i].addEventListener("click", function(){      
@@ -46,4 +11,28 @@ for (i = 0; i < panels.length; i++) {
       }
     });
 }
+
+/* Dots 
+const container = document.querySelector(".container");
+
+container.addEventListener("mousemove", createDot);
+
+function createDot(e) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    const size = Math.random() * 20 + 10; // Random size between 10 and 30 pixels
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    dot.style.top = `${e.clientY - size / 2}px`;
+    dot.style.left = `${e.clientX - size / 2}px`;
+
+    container.appendChild(dot);
+
+    // Remove dots after a certain time (e.g., 1 second)
+    setTimeout(() => {
+        dot.remove();
+    }, 1000);
+}
+*/
+
 
