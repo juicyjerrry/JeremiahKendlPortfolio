@@ -37,7 +37,6 @@ body {
   flex-grow: 1;
   flex-basis: 200;
   padding: 0;
-  z-index: 9;
 }
 
 .recipe-card {
@@ -73,12 +72,39 @@ body {
 }
 
 .hidden {
-  margin: 0px 5vw 0px 8vw;
+  margin: 0px 5vw 0px 5vw;
   max-height: 0vh;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
 }
 
+/* WORKS CARDS */
+.scrolling-wrapper {
+  overflow-x: visible;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 20vh;
+  margin-bottom: 4vh;
+  width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+ }
+  
+ .scrolling-wrapper > .card {
+  display: inline-block;
+  }
+  
+  .card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 4px solid #000;
+  width: 15vw;
+  height: 15vh;
+  background: none;
+  text-align: center;
+  cursor: pointer;
+}
 /* DOTS */
 /*
 .container {
