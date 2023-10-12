@@ -12,6 +12,16 @@ for (i = 0; i < panels.length; i++) {
     });
 }
 
+/* Fade Out */
+window.addEventListener('scroll', function() {
+    var topElements = document.querySelectorAll('#fade');
+    var scrollPosition = window.scrollY;
+
+    topElements.forEach(function(element) {
+        element.style.opacity = 1 - scrollPosition / 250;
+    });
+});
+
 /* Dots 
 const container = document.querySelector(".container");
 
