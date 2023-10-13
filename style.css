@@ -90,12 +90,8 @@ body {
     display: none;
   }
  }
-  
- .scrolling-wrapper > .card {
-  display: inline-block;
-  }
-  
-  .card {
+ 
+ .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   border: 4px solid #000;
@@ -105,9 +101,14 @@ body {
   text-align: center;
   cursor: pointer;
 }
+  
+ .scrolling-wrapper > .card {
+  display: inline-block;
+  }
+  
+
 /* DOTS */
-/*
-.container {
+/* .container {
     position: absolute;
     width: 100%;
     height: 100%;
