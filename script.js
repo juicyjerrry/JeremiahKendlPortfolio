@@ -22,27 +22,33 @@ window.addEventListener('scroll', function() {
     });
 });
 
-/* Dots 
-const container = document.querySelector(".container");
+/* Cursor Circle */
+const cursorCircle = document.getElementById('cursor-circle');
+const clickedCirclesContainer = document.getElementById('clicked-circles');
+let mouseX = 0;
+let mouseY = 0;
 
-container.addEventListener("mousemove", createDot);
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
 
-function createDot(e) {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    const size = Math.random() * 20 + 10; // Random size between 10 and 30 pixels
-    dot.style.width = `${size}px`;
-    dot.style.height = `${size}px`;
-    dot.style.top = `${e.clientY - size / 2}px`;
-    dot.style.left = `${e.clientX - size / 2}px`;
+  cursorCircle.style.left = mouseX - cursorCircle.clientWidth / 2 + 'px';
+  cursorCircle.style.top = mouseY - cursorCircle.clientHeight / 2 + 'px';
+});
 
-    container.appendChild(dot);
+document.addEventListener('click', (e) => {
+  const clickedCircle = document.createElement('div');
+  clickedCircle.className = 'clicked-circle';
+  clickedCircle.style.left = mouseX - cursorCircle.clientWidth / 2 + 'px';
+  clickedCircle.style.top = mouseY - cursorCircle.clientHeight / 2 + 'px';
+  clickedCirclesContainer.appendChild(clickedCircle);
 
-    // Remove dots after a certain time (e.g., 1 second)
-    setTimeout(() => {
-        dot.remove();
-    }, 1000);
+  const randomColor = getRandomColor();
+  cursorCircle.style.backgroundColor = randomColor;
+  clickedCircle.style.backgroundColor = randomColor;
+});
+
+function getRandomColor() {
+  const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generates a random hex color
+  return randomColor;
 }
-*/
-
-
