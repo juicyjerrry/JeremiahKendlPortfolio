@@ -25,30 +25,37 @@ window.addEventListener('scroll', function() {
 /* Cursor Circle */
 const cursorCircle = document.getElementById('cursor-circle');
 const clickedCirclesContainer = document.getElementById('clicked-circles');
-let mouseX = 0;
-let mouseY = 0;
+let cursorColor = getRandomColor();
+
+cursorCircle.style.backgroundColor = cursorColor;
 
 document.addEventListener('mousemove', (e) => {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
-
-  cursorCircle.style.left = mouseX - cursorCircle.clientWidth / 2 + 'px';
-  cursorCircle.style.top = mouseY - cursorCircle.clientHeight / 2 + 'px';
+  const { pageX: x, pageY: y } = e;
+  cursorCircle.style.left = x - cursorCircle.clientWidth / 2 + 'px';
+  cursorCircle.style.top = y - cursorCircle.clientHeight / 2 + 'px';
 });
 
 document.addEventListener('click', (e) => {
+  const { pageX: x, pageY: y } = e;
+
   const clickedCircle = document.createElement('div');
   clickedCircle.className = 'clicked-circle';
-  clickedCircle.style.left = mouseX - cursorCircle.clientWidth / 2 + 'px';
-  clickedCircle.style.top = mouseY - cursorCircle.clientHeight / 2 + 'px';
+  clickedCircle.style.left = x - cursorCircle.clientWidth / 2 + 'px';
+  clickedCircle.style.top = y - cursorCircle.clientHeight / 2 + 'px';
+  clickedCircle.style.backgroundColor = cursorColor; // Match the cursorColor
   clickedCirclesContainer.appendChild(clickedCircle);
 
-  const randomColor = getRandomColor();
-  cursorCircle.style.backgroundColor = randomColor;
-  clickedCircle.style.backgroundColor = randomColor;
+  cursorColor = getRandomColor(); // Generate a new random color for the next cursorCircle
+  cursorCircle.style.backgroundColor = cursorColor; // Set the cursorCircle color
+});
+
+document.getElementById('eraser-button').addEventListener('click', () => {
+  clickedCirclesContainer.innerHTML = '';
 });
 
 function getRandomColor() {
-  const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generates a random hex color
-  return randomColor;
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
+
+
+
