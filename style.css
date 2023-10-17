@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 main {
   font-family: "Raleway", sans-serif;
+  
   width: 650px;
   line-height: 1.2em;
   
@@ -9,30 +10,68 @@ main {
   margin-bottom: 20vh;
 }
 
+/* 
+-----------------ID------------------
+*/
+#noSelect{
+ -webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+ -moz-user-select: none; /* Old versions of Firefox */
+ -ms-user-select: none; /* Internet Explorer/Edge */
+ user-select: none; /* Non-prefixed version, currently*/
+}
+
 #cursor-circle {
   width: 20px;
   height: 20px;
-  background-color: rgba(255, 0, 0, 0.5);
   border-radius: 50%;
   position: absolute;
   pointer-events: none;
   mix-blend-mode: difference;
 }
 
+/* 
+-----------------Circle Stamps-----------------
+*/
 .clicked-circle {
   width: 20px;
   height: 20px;
-  background-color: rgba(0, 0, 255, 0.5);
   border-radius: 50%;
   position: absolute;
+  mix-blend-mode: difference;
+  z-index: -1;
 }
 
-
-body {  
+/* 
+-----------------Eraser Button-----------------
+*/
+.eraser-button {
   display: flex;
-  justify-content: center;
   flex-grow: 1;
   flex-basis: 200;
+  background-color: pink;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 9;
+}
+
+.eraser-button:hover {
+  transform: scaleX(1.2);
+}
+
+/* 
+----------------Body-----------------
+*/
+body {  
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 200;
+  justify-content: center;
   padding: 0;
   margin: 0vh 10vw 10vh 10vw;
 }
@@ -42,8 +81,8 @@ body {
 }
 
 .name{
-  position: relative;
   display: flex;
+  position: relative;
   justify-content: center;
   padding: 1px;
   margin: 0px;
@@ -72,10 +111,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     border: 4px solid #000;
-    overflow: hidden;
     
+    overflow: hidden;
     margin: 3vh;
     padding: 2vh;
+    z-index: 9;
+    background-color: white;
 }
 
 .recipe-card:hover{
@@ -95,6 +136,8 @@ body {
   max-height: 0vh;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
+  background-color: white;
+  z-index: 9;
 }
 
 /* WORKS CARDS */
@@ -125,19 +168,3 @@ body {
   display: inline-block;
   }
   
-
-/* DOTS */
-/* .container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #001;
-    border-radius: 50%;
-    z-index: 0;
-}
-*/
