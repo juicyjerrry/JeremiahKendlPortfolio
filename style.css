@@ -30,22 +30,7 @@ main {
   mix-blend-mode: difference;
 }
 
-/* 
------------------Circle Stamps-----------------
-*/
-.clicked-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  mix-blend-mode: difference;
-  z-index: -1;
-}
-
-/* 
------------------Eraser Button-----------------
-*/
-.eraser-button {
+#eraser-button {
   display: flex;
   flex-grow: 1;
   flex-basis: 200;
@@ -60,11 +45,23 @@ main {
   z-index: 9;
 }
 
-.eraser-button:hover {
+#eraser-button:hover {
   transform: scaleX(1.2);
 }
 
 /* 
+-----------------Circle Stamps-----------------
+*/
+.clicked-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  mix-blend-mode: difference;
+  z-index: -1;
+}
+
+/*
 ----------------Body-----------------
 */
 body {  
