@@ -3,7 +3,7 @@
 main {
   font-family: "Raleway", sans-serif;
   
-  width: 650px;
+  max-width: 100%;
   line-height: 1.2em;
   
   margin-top: 15vh;
@@ -72,9 +72,9 @@ main {
 */
 body {  
   display: flex;
+  justify-content: center;
   flex-grow: 1;
   flex-basis: 200;
-  justify-content: center;
   padding: 0;
   margin: 0vh 10vw 10vh 10vw;
 }
@@ -84,8 +84,8 @@ body {
 }
 
 .name{
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: center;
   padding: 1px;
   margin: 0px;
@@ -98,25 +98,25 @@ body {
   flex-grow: 1;
   flex-basis: 200;
   padding: 0;
+  z-index: 9;
 }
 
 .recipe-card {
     display: flex;
     flex-grow: 1;
-    flex-basis: 200;
+    flex-basis: 100%;
     align-items: center;
     justify-content: center;
     transition: 0.4s;
     
     width: 30vw;
     height: 8vh;
-    max-height: 8vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     border: 4px solid #000;
     
     overflow: hidden;
-    margin: 3vh;
+    margin: 3vh auto;
     padding: 2vh;
     z-index: 9;
     background-color: white;
@@ -137,7 +137,7 @@ body {
 .hidden {
   margin: 0px 5vw 0px 5vw;
   max-height: 0vh;
-  overflow: hidden;
+  overflow: auto;
   transition: max-height 0.4s ease-out;
   background-color: white;
   z-index: 9;
@@ -145,7 +145,7 @@ body {
 
 /* WORKS CARDS */
 .scrolling-wrapper {
-  overflow-x: visible;
+  overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   height: 20vh;
@@ -160,7 +160,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   border: 4px solid #000;
-  width: 15vw;
+  width: 45vw;
+  max-width: 200px;
   height: 15vh;
   background: none;
   text-align: center;
