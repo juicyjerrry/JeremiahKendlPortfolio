@@ -3,11 +3,11 @@
 main {
   font-family: "Raleway", sans-serif;
   
-  max-width: 100%;
+  width: 60vw;
+  max-width: 600px;
+  min-width: 300px;
   line-height: 1.2em;
-  
-  margin-top: 15vh;
-  margin-bottom: 20vh;
+  margin: 10vh 5vw 10vh 5vw;
 }
 
 /* 
@@ -21,22 +21,18 @@ main {
  user-select: none; /* Non-prefixed version, currently*/
 }
 
-#cursor-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  mix-blend-mode: difference;
-}
+/* 
+Eraser Button
+*/
 
 #eraser-button {
-  display: flex;
+  display: relative;
   flex-grow: 1;
   flex-basis: 200;
   background-color: pink;
   border: none;
   color: white;
+  
   padding: 10px 20px;
   border-radius: 20px;
   font-weight: bold;
@@ -50,8 +46,18 @@ main {
 }
 
 /* 
------------------Circle Stamps-----------------
+Circle Stamps
 */
+
+#cursor-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
 .clicked-circle {
   width: 20px;
   height: 20px;
@@ -60,12 +66,6 @@ main {
   mix-blend-mode: difference;
   z-index: -1;
 }
-
-/* 
------------------Eraser Button-----------------
-*/
-
-
 
 /* 
 ----------------Body-----------------
@@ -141,6 +141,9 @@ body {
   transition: max-height 0.4s ease-out;
   background-color: white;
   z-index: 9;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* WORKS CARDS */
