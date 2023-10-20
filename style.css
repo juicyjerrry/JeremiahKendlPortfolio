@@ -18,7 +18,7 @@ main {
  -khtml-user-select: none; /* Konqueror HTML */
  -moz-user-select: none; /* Old versions of Firefox */
  -ms-user-select: none; /* Internet Explorer/Edge */
- user-select: none; /* Non-prefixed version, currently*/
+  user-select: none; /* Non-prefixed version, currently*/
 }
 
 /* 
@@ -39,6 +39,12 @@ Eraser Button
   cursor: pointer;
   transition: transform 0.3s;
   z-index: 9;
+
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+   user-select: none; /* Non-prefixed version, currently*/
 }
 
 #eraser-button:hover {
@@ -166,9 +172,46 @@ body {
   width: 45vw;
   max-width: 200px;
   height: 15vh;
+
   background: none;
   text-align: center;
   cursor: pointer;
+  position: sticky; /* Added for positioning the text */
+  overflow: visible; /* Added to hide overflow when text is hidden */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s; /* Added for image fade */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Enlarge the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Adjust shadow on hover */
+}
+
+.card:hover img {
+  opacity: 0.2; /* Reduce image opacity on hover */
+}
+
+.card .cardText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.3s;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.card:hover .cardText {
+  opacity: 1; /* Show the text on hover */
 }
   
  .scrolling-wrapper > .card {
